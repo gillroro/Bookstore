@@ -92,6 +92,15 @@ public class CustomerLoginAction extends ActionSupport {
 		return SUCCESS;
 	}
 
+	public String logout(){
+		WebSession.remove("CurrentUser");
+		WebSession.clear();
+		return SUCCESS;
+	}
+	
+	public String forward(){
+		return NONE;
+	}
 
 
 }

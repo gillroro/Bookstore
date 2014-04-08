@@ -27,5 +27,9 @@
 	<s:textfield name="image" value="Image" theme="css_xhtml" />
 	<s:submit value="Add Book" theme="simple" />
 </s:form>
+
+<s:form action = "Logout" >
+	<s:submit value = "Logout" theme= "simple"  />
+</s:form>
 </body>
 </html>

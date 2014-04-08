@@ -8,6 +8,7 @@
 <title>Customer Home page</title>
 </head>
 <body>
+Welcome to the Book Store <s:property value="email" />
 <table>
 <s:iterator value="books" status ="booksStatus" >
  <tr>
@@ -35,5 +36,9 @@
   </tr>
 </s:iterator>
 </table>
+
+<s:form action = "CustomerLogout" >
+	<s:submit value = "Logout" theme= "simple"  />
+</s:form>
 </body>
 </html>

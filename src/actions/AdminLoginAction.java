@@ -84,6 +84,12 @@ public class AdminLoginAction extends ActionSupport {
 		
 	}
 	
+	public String logout(){
+		WebSession.remove("CurrentUser");
+		WebSession.clear();
+		return SUCCESS;
+	}
+	
 	
 
 }

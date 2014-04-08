@@ -24,5 +24,17 @@
             <result name="success">/jsp/bookAdded.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
         </action>
+        <action name="Logout" class="actions.AdminLoginAction" method="logout">
+        	<result name="success">/jsp/index.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
+        <action name="CustomerLogout" class="actions.CustomerLoginAction" method="logout">
+        	<result name="success">/jsp/index.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>	
+         <action name="Login" class="actions.CustomerLoginAction" method="forward">
+        	<result name="none">/jsp/index.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
     </package>
 </struts>
