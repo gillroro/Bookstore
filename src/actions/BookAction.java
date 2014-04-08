@@ -84,13 +84,27 @@ public class BookAction extends ActionSupport {
 		results = getBooks.executeQuery();
 		while(results.next()){
 			Book book = new Book();
-			
+			book.setTitle(results.getString("title"));
+			book.setAuthor(results.getString("author"));
+			book.setCategory(results.getString("category"));
+			book.setPrice(results.getDouble("price"));
+			book.setImage(results.getString("image"));
+			books.add(book);
 		}
+		connection.close();
+		getBooks.close();
+		results.close();
 		return books;
 	}
 	
-	public String displayAllBooks(){
-		return SUCCESS;
+	public String displayAllBooks() throws SQLException{
+		getAllBooks();
+		if(books!=null){
+			return SUCCESS;
+		}
+		else{
+			return "failure";
+		}
 	}
 	
 
