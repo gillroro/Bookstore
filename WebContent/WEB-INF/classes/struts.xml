@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="CustomerLoginAction" class="actions.CustomerLoginAction">
+            <result name="success">/jsp/customerSuccess.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+        </action>
+        <action name="AdminLoginAction" class="actions.AdminLoginAction">
+            <result name="success">/jsp/adminSuccess.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+        </action>
+         <action name="CustomerRegister" class="actions.CustomerLoginAction" method="registerCustomer">
+            <result name="success">/jsp/customerRegisteredSuccess.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+        </action>
+         <action name="AdminRegister" class="actions.AdminLoginAction" method="addAdmin">
+            <result name="success">/jsp/adminRegistered.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+        </action>
+        <action name="AddBook" class="actions.BookAction" method="addBook">
+            <result name="success">/jsp/bookAdded.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+        </action>
+    </package>
+</struts>
