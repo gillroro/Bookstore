@@ -5,10 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Customer Home page</title>
+<title>Book Index</title>
 </head>
 <body>
-Welcome to the Book Store <s:property value="email" />
 
 <table>
 <th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Image</th>
@@ -39,9 +38,5 @@ Welcome to the Book Store <s:property value="email" />
 </s:iterator>
 </table>
 
-
-<s:form action = "CustomerLogout" >
-	<s:submit value = "Logout" theme= "simple"  />
-</s:form>
 </body>
 </html>

@@ -36,5 +36,9 @@
         	<result name="none">/jsp/index.jsp</result>
         	<result name="failure">/jsp/failure.jsp</result>
         </action>
+          <action name="ViewAllBooks" class="actions.BookAction" method="displayAllBooks">
+        	<result name="success">/jsp/bookindex.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
     </package>
 </struts>

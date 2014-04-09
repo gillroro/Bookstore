@@ -107,5 +107,9 @@ public class BookAction extends ActionSupport {
 		}
 	}
 	
+	public String forward(){
+		return NONE;
+	}
+	
 
 }
