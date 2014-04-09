@@ -160,6 +160,7 @@ public class CustomerLoginAction extends ActionSupport {
 			book.setCategory(results.getString("category"));
 			book.setPrice(results.getDouble("price"));
 			book.setImage(results.getString("image"));
+			book.setQuantity(results.getInt("quantity"));
 			books.add(book);
 		}
 		connection.close();

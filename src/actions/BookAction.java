@@ -25,6 +25,7 @@ public class BookAction extends ActionSupport {
 	private String category;
 	private double price;
 	private String image;
+	private int quantity;
 	private List<Book> books = new ArrayList<Book>();
 	
 	public String getTitle() {
@@ -66,12 +67,13 @@ public class BookAction extends ActionSupport {
 	}
 	public String addBook() throws SQLException{
 		connection = ConnectionFactory.getConnection();
-		addBook = connection.prepareStatement("INSERT INTO book (title, author, price, category, image) VALUES (?,?,?,?,?)");
+		addBook = connection.prepareStatement("INSERT INTO book (title, author, price, category, image, quantity) VALUES (?,?,?,?,?,?)");
 		addBook.setString(1, getTitle());
 		addBook.setString(2, getAuthor());
 		addBook.setDouble(3, getPrice());
 		addBook.setString(4, getCategory());
 		addBook.setString(5, getImage());
+		addBook.setInt(6, getQuantity());
 		addBook.executeUpdate();
 		addBook.close();
 		connection.close();
@@ -89,6 +91,7 @@ public class BookAction extends ActionSupport {
 			book.setCategory(results.getString("category"));
 			book.setPrice(results.getDouble("price"));
 			book.setImage(results.getString("image"));
+			book.setQuantity(results.getInt("quantity"));
 			books.add(book);
 		}
 		connection.close();
@@ -109,6 +112,12 @@ public class BookAction extends ActionSupport {
 	
 	public String forward(){
 		return NONE;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 

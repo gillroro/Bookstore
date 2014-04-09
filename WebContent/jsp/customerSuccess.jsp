@@ -11,7 +11,7 @@
 Welcome to the Book Store <s:property value="email" />
 
 <table>
-<th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Image</th>
+<th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Image</th><th>Quantity</th>
 <s:iterator value="books" status ="booksStatus" >
  <tr>
   	<s:if test="#booksStatus.even == true">
@@ -20,6 +20,7 @@ Welcome to the Book Store <s:property value="email" />
 	  <td style="background: #CCCCCC"><s:property value ="price" /></td>
 	  <td style="background: #CCCCCC"><s:property value ="category" /></td>
 	  <td style="background: #CCCCCC"><s:property value ="image" /></td>
+	   <td style="background: #CCCCCC"><s:property value ="quantity" /></td>
     </s:if>
     <s:elseif test="#booksStatus.first == true">
       <td><s:property value ="title"  /></td>
@@ -27,6 +28,7 @@ Welcome to the Book Store <s:property value="email" />
 	  <td><s:property value ="price" /></td>
 	  <td><s:property value ="category" /></td>
 	  <td><s:property value ="image" /></td>
+	  <td><s:property value ="quantity" /></td>
     </s:elseif>
     <s:else>
       <td><s:property value ="title"  /></td>
@@ -34,6 +36,7 @@ Welcome to the Book Store <s:property value="email" />
 	  <td><s:property value ="price" /></td>
 	  <td><s:property value ="category" /></td>
 	  <td><s:property value ="image" /></td>
+	  <td><s:property value ="quantity" /></td>
     </s:else>
   </tr>
 </s:iterator>

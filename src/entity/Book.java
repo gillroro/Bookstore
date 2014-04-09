@@ -7,7 +7,15 @@ public class Book {
 	private double price;
 	private String category;
 	private String image;
+	private int quantity;
 	
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public String getTitle() {
 		return title;
 	}
