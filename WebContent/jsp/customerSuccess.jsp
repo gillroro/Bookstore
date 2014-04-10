@@ -14,7 +14,7 @@
 	<br />
 	
 	<s:form action="SearchStock">
-		<s:submit name="SearchStock" value="Search Stock" theme="simple" />
+		<s:submit name="SearchStock" value="Search Stock" theme="simple"/>
 	</s:form>
 	
 	<s:form action="CustomerLogout">
