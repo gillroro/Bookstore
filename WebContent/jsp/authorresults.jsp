@@ -5,15 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Customer Home page</title>
+<title>Stock By Author</title>
 </head>
 <body>
-Welcome to the Book Store <s:property value="email" />
-<br />
-<br />
-
+<h2><b><i>Search Results - Author</i></b></h2>
 <table>
-<th>Image</th><th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Quantity</th><th>Options</th>
+<th>Image</th><th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Quantity</th>
 <s:iterator value="books" status ="booksStatus" >
  <tr>
   	<s:if test="#booksStatus.even == true">
@@ -23,7 +20,6 @@ Welcome to the Book Store <s:property value="email" />
 	  <td style="background: #CCCCCC">&euro;<s:property value ="price" /></td>
 	  <td style="background: #CCCCCC"><s:property value ="category" /></td>
 	  <td style="background: #CCCCCC"><s:property value ="quantity" /></td>
-	  <td style="background: #CCCCCC"><a href="<s:url  />">Add To Cart</a><br /><a href="<s:url  />">Review</a></td>
     </s:if>
     <s:elseif test="#booksStatus.first == true">
       <td><img src="<s:property value ="image" />"/></td>
@@ -32,7 +28,6 @@ Welcome to the Book Store <s:property value="email" />
 	  <td>&euro;<s:property value ="price" /></td>
 	  <td><s:property value ="category" /></td>
 	  <td><s:property value ="quantity" /></td>
-	   <td><a href="<s:url  />">Add To Cart</a><br /><a href="<s:url  />">Review</a></td>
     </s:elseif>
     <s:else>
       <td><img src="<s:property value ="image" />"/></td>
@@ -41,16 +36,10 @@ Welcome to the Book Store <s:property value="email" />
 	  <td>&euro;<s:property value ="price" /></td>
 	  <td><s:property value ="category" /></td>
 	  <td><s:property value ="quantity" /></td>
-	   <td><a href="<s:url  />">Add To Cart</a><br /><a href="<s:url  />">Review</a></td>
     </s:else>
   </tr>
 </s:iterator>
 </table>
 
-<br />
-<br />
-<s:form action = "CustomerLogout" >
-	<s:submit value = "Logout" theme= "simple"  />
-</s:form>
 </body>
 </html>

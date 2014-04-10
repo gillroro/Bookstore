@@ -20,14 +20,26 @@
 
 <h5>Add Book to Store</h5>
 <s:form action="AddBook">
-	<s:textfield name="title" value="title" theme="css_xhtml" />
+	<s:textfield name="title" value="Title" theme="css_xhtml" />
 	<s:textfield name="author" value="Author" theme="css_xhtml" />
 	<s:textfield name="price" value="Price" theme="css_xhtml" />
 	<s:textfield name="category" value="Category" theme="css_xhtml" />
 	<s:textfield name="image" value="Image" theme="css_xhtml" />
+	<s:textfield name="quantity" value="Quantity" theme="css_xhtml" />
 	<s:submit value="Add Book" theme="simple" />
 </s:form>
 
+<h5><b><i>Stock</i></b></h5>
+<s:form action="ViewStock" >
+	<s:submit name="ViewStock" value="View Stock" />
+</s:form>
+<s:form action="SearchStock" >
+	<s:submit name="SearchStock" value="Search Stock" />
+</s:form>
+<h5><b><i>Customers</i></b></h5>
+<s:iterator  value="customers">
+	<a href="<s:url  />"><s:property value ="name" /></a><br />
+</s:iterator>
 <s:form action = "Logout" >
 	<s:submit value = "Logout" theme= "simple"  />
 </s:form>

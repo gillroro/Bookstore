@@ -40,5 +40,21 @@
         	<result name="success">/jsp/bookindex.jsp</result>
         	<result name="failure">/jsp/failure.jsp</result>
         </action>
+        <action name="ViewStock" class="actions.BookAction" method="displayAllBooks">
+        	<result name="success">/jsp/bookindex.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
+        <action name="SearchStock" class="actions.BookAction" method="forward">
+        	<result name="none">/jsp/searchstock.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
+        <action name="StockByCategory" class="actions.BookAction" method="displayBooksByCategory">
+        	<result name="success">/jsp/categoryresults.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
+        <action name="StockByAuthor" class="actions.BookAction" method="displayBooksByAuthor">
+        	<result name="success">/jsp/authorresults.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
     </package>
 </struts>
