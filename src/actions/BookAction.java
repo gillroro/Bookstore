@@ -174,6 +174,7 @@ public class BookAction extends ActionSupport {
 		connection = ConnectionFactory.getConnection();
 		getBooks = connection.prepareStatement("SELECT * FROM book WHERE title LIKE ?");
 		getBooks.setString(1, "%"+title+"%");
+		
 		results = getBooks.executeQuery();
 		while(results.next()){
 			Book book = new Book();
