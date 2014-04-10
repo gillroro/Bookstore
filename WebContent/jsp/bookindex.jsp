@@ -13,7 +13,11 @@
 <br />
 
 <table>
+<thead>
+<tr>
 <th>Image</th><th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Quantity</th><th>Options</th>
+</tr>
+</thead>
 <s:iterator value="books" status ="booksStatus" >
  <tr>
   	<s:if test="#booksStatus.even == true">
