@@ -32,6 +32,7 @@
 				<th>Category</th>
 				<th>Quantity</th>
 				<th>Options</th>
+				<th>Rate</th>
 			</tr>
 		</thead>
 		<s:iterator value="books" status="booksStatus">
@@ -48,6 +49,11 @@
 					<td style="background: #CCCCCC"><a href="<s:url  />">Add
 							To Cart</a><br />
 					<a href="<s:url  />">Review</a></td>
+					<td style="background: #CCCCCC"><input name="star1" type="radio" class="star"/>
+					 <input name="star1" type="radio" class="star"/> 
+					 <input name="star1" type="radio" class="star"/> 
+					 <input name="star1" type="radio" class="star"/> 
+					<input name="star1" type="radio" class="star"/></td>
 				</s:if>
 				<s:elseif test="#booksStatus.first == true">
 					<td><img src="<s:property value ="image" />" /></td>
@@ -58,6 +64,11 @@
 					<td><s:property value="quantity" /></td>
 					<td><a href="<s:url  />">Add To Cart</a><br />
 					<a href="<s:url  />">Review</a></td>
+					<td><input name="star1" type="radio" class="star"/>
+					 <input name="star1" type="radio" class="star"/> 
+					 <input name="star1" type="radio" class="star"/> 
+					 <input name="star1" type="radio" class="star"/> 
+					<input name="star1" type="radio" class="star"/></td>
 				</s:elseif>
 				<s:else>
 					<td><img src="<s:property value ="image" />" /></td>
@@ -68,6 +79,11 @@
 					<td><s:property value="quantity" /></td>
 					<td><a href="<s:url  />">Add To Cart</a><br />
 					<a href="<s:url  />">Review</a></td>
+					<td><input name="star1" type="radio" class="star"/>
+					 <input name="star1" type="radio" class="star"/> 
+					 <input name="star1" type="radio" class="star"/> 
+					 <input name="star1" type="radio" class="star"/> 
+					<input name="star1" type="radio" class="star"/></td>
 				</s:else>
 			</tr>
 		</s:iterator>

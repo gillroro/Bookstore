@@ -7,9 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Stock By Author</title>
 <script type="text/javascript"
-	src="C:\JPA\Bookstore\WebContent\js\jquery-latest.js"></script>
-<script type="text/javascript"
-	src="C:\JPA\Bookstore\WebContent\js\jquery.tablesorter.js"></script>
+	src="/WebContent/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/WebContent/js/jquery.tablesorter.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#myTable").tablesorter();
