@@ -56,5 +56,9 @@
         	<result name="success">/jsp/authorresults.jsp</result>
         	<result name="failure">/jsp/failure.jsp</result>
         </action>
+        <action name="StockByTitle" class="actions.BookAction" method="displayBooksByTitle">
+        	<result name="success">/jsp/titleresults.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
     </package>
 </struts>

@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Stock By Category</title>
+<title>Stock By Title</title>
 </head>
 <body>
-<h2><b><i>Search Results - Category</i></b></h2>
+<h2><b><i>Search Results - Title</i></b></h2>
 <table>
 <th>Image</th><th>Title</th><th>Author</th><th>Price</th><th>Category</th><th>Quantity</th>
 <s:iterator value="books" status ="booksStatus" >

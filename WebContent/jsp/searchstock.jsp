@@ -8,15 +8,20 @@
 <title>Search Stock</title>
 </head>
 <body>
-<h5><b><i>Search By Category</i></b></h5>
+<h3><b><i>Search By Category</i></b></h3>
 <s:form action="StockByCategory">
 	<s:textfield name="category" value="category" />
 	<s:submit value="Search" />
 </s:form>
+<h3><b><i>Search By Author</i></b></h3>
 <s:form action="StockByAuthor">
 	<s:textfield name="author" value="author" />
 	<s:submit value="Search" />
 </s:form>
-
+<h3><b><i>Search By Title</i></b></h3>
+<s:form action="StockByTitle">
+	<s:textfield name="title" value="title" />
+	<s:submit value="Search" />
+</s:form>
 </body>
 </html>

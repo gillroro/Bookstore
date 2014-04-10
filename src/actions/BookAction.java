@@ -169,6 +169,36 @@ public class BookAction extends ActionSupport {
 			return "failure";
 		}
 	}
+	
+	public List<Book> getBookByTitle() throws SQLException{
+		connection = ConnectionFactory.getConnection();
+		getBooks = connection.prepareStatement("SELECT * FROM book WHERE title LIKE ?");
+		getBooks.setString(1, "%"+title+"%");
+		results = getBooks.executeQuery();
+		while(results.next()){
+			Book book = new Book();
+			book.setTitle(results.getString("title"));
+			book.setAuthor(results.getString("author"));
+			book.setPrice(results.getDouble("price"));
+			book.setImage(results.getString("image"));
+			book.setCategory(results.getString("category"));
+			book.setQuantity(results.getInt("quantity"));
+			books.add(book);
+		}
+		connection.close();
+		results.close();
+		return books;
+	}
+	
+	public String displayBooksByTitle() throws SQLException{
+		getBookByTitle();
+		if(books != null){
+			return SUCCESS;
+		}
+		else {
+			return "failure";
+		}
+	}
 
 	
 	public String forward(){
