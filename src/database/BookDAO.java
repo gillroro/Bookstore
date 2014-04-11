@@ -6,7 +6,7 @@ import entity.Book;
 
 public interface BookDAO {
 	
-	public void addBook();
+	public boolean addBook(Book book);
 	
 	public List<Book> getAllBooks();
 	

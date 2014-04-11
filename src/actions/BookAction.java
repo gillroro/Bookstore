@@ -9,13 +9,14 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import database.BookDAOImpl;
 import database.ConnectionFactory;
 import entity.Book;
 
 public class BookAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Connection connection;
 	private PreparedStatement addBook;
 	private PreparedStatement getBooks;
@@ -25,9 +26,10 @@ public class BookAction extends ActionSupport {
 	private String category;
 	private double price;
 	private String image;
+	private BookDAOImpl bookDao;
 	private int quantity;
 	private List<Book> books = new ArrayList<Book>();
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -58,28 +60,38 @@ public class BookAction extends ActionSupport {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
+
 	public List<Book> getBooks() {
 		return books;
 	}
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
-	public String addBook() throws SQLException{
-		connection = ConnectionFactory.getConnection();
-		addBook = connection.prepareStatement("INSERT INTO book (title, author, price, category, image, quantity) VALUES (?,?,?,?,?,?)");
-		addBook.setString(1, getTitle());
-		addBook.setString(2, getAuthor());
-		addBook.setDouble(3, getPrice());
-		addBook.setString(4, getCategory());
-		addBook.setString(5, getImage());
-		addBook.setInt(6, getQuantity());
-		addBook.executeUpdate();
-		addBook.close();
-		connection.close();
-		return SUCCESS;
+	public String addBook() {
+		bookDao = new BookDAOImpl();
+		Book book = new Book();
+		book.setAuthor(getAuthor());
+		book.setTitle(getTitle());
+		book.setCategory(getCategory());
+		book.setImage(getImage());
+		book.setPrice(getPrice());
+		book.setQuantity(getQuantity());
+		boolean isAdded = bookDao.addBook(book);
+		if(isAdded){
+			return SUCCESS;
+		}
+		else{ 
+			return "failure"; 
+		}
+
 	}
-	
+
+	public BookDAOImpl getBookDao() {
+		return bookDao;
+	}
+	public void setBookDao(BookDAOImpl bookDao) {
+		this.bookDao = bookDao;
+	}
 	public List<Book> getAllBooks() throws SQLException{
 		connection = ConnectionFactory.getConnection();
 		getBooks= connection.prepareStatement("SELECT * FROM book");
@@ -99,7 +111,7 @@ public class BookAction extends ActionSupport {
 		results.close();
 		return books;
 	}
-	
+
 	public String displayAllBooks() throws SQLException{
 		getAllBooks();
 		if(books!=null){
@@ -109,7 +121,7 @@ public class BookAction extends ActionSupport {
 			return "failure";
 		}
 	}
-	
+
 	public List<Book> getBookByCategory() throws SQLException{
 		connection = ConnectionFactory.getConnection();
 		getBooks = connection.prepareStatement("SELECT * FROM book WHERE category LIKE ?");
@@ -129,7 +141,7 @@ public class BookAction extends ActionSupport {
 		results.close();
 		return books;
 	}
-	
+
 	public String displayBooksByCategory() throws SQLException{
 		getBookByCategory();
 		if(books != null){
@@ -139,7 +151,7 @@ public class BookAction extends ActionSupport {
 			return "failure";
 		}
 	}
-	
+
 	public List<Book> getBookByAuthor() throws SQLException{
 		connection = ConnectionFactory.getConnection();
 		getBooks = connection.prepareStatement("SELECT * FROM book WHERE author LIKE ?");
@@ -159,7 +171,7 @@ public class BookAction extends ActionSupport {
 		results.close();
 		return books;
 	}
-	
+
 	public String displayBooksByAuthor() throws SQLException{
 		getBookByAuthor();
 		if(books != null){
@@ -169,12 +181,12 @@ public class BookAction extends ActionSupport {
 			return "failure";
 		}
 	}
-	
+
 	public List<Book> getBookByTitle() throws SQLException{
 		connection = ConnectionFactory.getConnection();
 		getBooks = connection.prepareStatement("SELECT * FROM book WHERE title LIKE ?");
 		getBooks.setString(1, "%"+title+"%");
-		
+
 		results = getBooks.executeQuery();
 		while(results.next()){
 			Book book = new Book();
@@ -190,7 +202,7 @@ public class BookAction extends ActionSupport {
 		results.close();
 		return books;
 	}
-	
+
 	public String displayBooksByTitle() throws SQLException{
 		getBookByTitle();
 		if(books != null){
@@ -201,7 +213,7 @@ public class BookAction extends ActionSupport {
 		}
 	}
 
-	
+
 	public String forward(){
 		return NONE;
 	}
@@ -211,6 +223,6 @@ public class BookAction extends ActionSupport {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
+
 
 }
