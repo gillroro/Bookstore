@@ -39,7 +39,7 @@
 			<tr>
 				<s:if test="#booksStatus.even == true">
 					<td style="background: #CCCCCC"><img
-						src="<s:property value ="image" />" /></td>
+						src="<s:property value ="image" />" width="90" height="60" /></td>
 					<td style="background: #CCCCCC"><s:property value="title" /></td>
 					<td style="background: #CCCCCC"><s:property value="author" /></td>
 					<td style="background: #CCCCCC">&euro;<s:property
@@ -56,7 +56,7 @@
 					<input name="star1" type="radio" class="star"/></td>
 				</s:if>
 				<s:elseif test="#booksStatus.first == true">
-					<td><img src="<s:property value ="image" />" /></td>
+					<td><img src="<s:property value ="image" />" width="90" height="60" /></td>
 					<td><s:property value="title" /></td>
 					<td><s:property value="author" /></td>
 					<td>&euro;<s:property value="price" /></td>
@@ -71,7 +71,7 @@
 					<input name="star1" type="radio" class="star"/></td>
 				</s:elseif>
 				<s:else>
-					<td><img src="<s:property value ="image" />" /></td>
+					<td><img src="<s:property value ="image" />" width="90" height="60" /></td>
 					<td><s:property value="title" /></td>
 					<td><s:property value="author" /></td>
 					<td>&euro;<s:property value="price" /></td>
