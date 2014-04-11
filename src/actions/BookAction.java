@@ -18,7 +18,6 @@ public class BookAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private Connection connection;
-	private PreparedStatement addBook;
 	private PreparedStatement getBooks;
 	private ResultSet results;
 	private String title;
@@ -83,7 +82,6 @@ public class BookAction extends ActionSupport {
 		else{ 
 			return "failure"; 
 		}
-
 	}
 
 	public BookDAOImpl getBookDao() {
@@ -92,28 +90,11 @@ public class BookAction extends ActionSupport {
 	public void setBookDao(BookDAOImpl bookDao) {
 		this.bookDao = bookDao;
 	}
-	public List<Book> getAllBooks() throws SQLException{
-		connection = ConnectionFactory.getConnection();
-		getBooks= connection.prepareStatement("SELECT * FROM book");
-		results = getBooks.executeQuery();
-		while(results.next()){
-			Book book = new Book();
-			book.setTitle(results.getString("title"));
-			book.setAuthor(results.getString("author"));
-			book.setCategory(results.getString("category"));
-			book.setPrice(results.getDouble("price"));
-			book.setImage(results.getString("image"));
-			book.setQuantity(results.getInt("quantity"));
-			books.add(book);
-		}
-		connection.close();
-		getBooks.close();
-		results.close();
-		return books;
-	}
+
 
 	public String displayAllBooks() throws SQLException{
-		getAllBooks();
+		bookDao = new BookDAOImpl();
+		setBooks(bookDao.getAllBooks());
 		if(books!=null){
 			return SUCCESS;
 		}

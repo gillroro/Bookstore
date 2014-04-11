@@ -60,5 +60,9 @@
         	<result name="success">/jsp/titleresults.jsp</result>
         	<result name="failure">/jsp/failure.jsp</result>
         </action>
+         <action name="addToCart" class="actions.BookAction" method="displayBooksByTitle">
+        	<result name="success">/jsp/titleresults.jsp</result>
+        	<result name="failure">/jsp/failure.jsp</result>
+        </action>
     </package>
 </struts>

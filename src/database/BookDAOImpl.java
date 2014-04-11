@@ -99,7 +99,6 @@ public class BookDAOImpl implements BookDAO {
 			addBook.close();
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return added;
@@ -107,12 +106,54 @@ public class BookDAOImpl implements BookDAO {
 
 	@Override
 	public List<Book> getAllBooks() {
-		return null;
+		try{
+		connection = ConnectionFactory.getConnection();
+		getBooks= connection.prepareStatement("SELECT * FROM book");
+		results = getBooks.executeQuery();
+		while(results.next()){
+			Book book = new Book();
+			book.setTitle(results.getString("title"));
+			book.setAuthor(results.getString("author"));
+			book.setCategory(results.getString("category"));
+			book.setPrice(results.getDouble("price"));
+			book.setImage(results.getString("image"));
+			book.setQuantity(results.getInt("quantity"));
+			books.add(book);
+		}
+		connection.close();
+		getBooks.close();
+		results.close();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return books;
 	}
 
 	@Override
 	public List<Book> getBookByCategory() {	
-		return null;
+		try{
+		connection = ConnectionFactory.getConnection();
+		getBooks = connection.prepareStatement("SELECT * FROM book WHERE category LIKE ?");
+		getBooks.setString(1, "%"+category+"%");
+		results = getBooks.executeQuery();
+		while(results.next()){
+			Book book = new Book();
+			book.setTitle(results.getString("title"));
+			book.setAuthor(results.getString("author"));
+			book.setPrice(results.getDouble("price"));
+			book.setImage(results.getString("image"));
+			book.setCategory(results.getString("category"));
+			book.setQuantity(results.getInt("quantity"));
+			books.add(book);
+		}
+		connection.close();
+		results.close();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return books;
 	}
 
 	@Override

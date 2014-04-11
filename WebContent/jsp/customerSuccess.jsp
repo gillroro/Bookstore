@@ -35,6 +35,7 @@
 				<th>Rate</th>
 			</tr>
 		</thead>
+		<s:form action = "addToCart">
 		<s:iterator value="books" status="booksStatus">
 			<tr>
 				<s:if test="#booksStatus.even == true">
@@ -87,6 +88,7 @@
 				</s:else>
 			</tr>
 		</s:iterator>
+		</s:form>
 	</table>
 
 	<br />
