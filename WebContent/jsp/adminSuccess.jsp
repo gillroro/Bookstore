@@ -43,7 +43,17 @@
 		<b><i>Customers</i></b>
 	</h5>
 	<s:iterator value="customers">
-		<a href="<s:url  />"><s:property value="name" /></a>
+
+		<s:property value="name" />
+		<s:url id="editURL" action="editUser">
+
+			<s:param name="id" value="%{id}"></s:param>
+
+		</s:url>
+
+		<s:a href="%{editURL}">Edit</s:a>
+
+
 		<br />
 	</s:iterator>
 	<s:form action="Logout">

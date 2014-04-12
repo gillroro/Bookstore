@@ -3,66 +3,76 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    <package name="default" extends="struts-default">
-        <action name="CustomerLoginAction" class="actions.CustomerLoginAction">
-            <result name="success">/jsp/customerSuccess.jsp</result>
+	<package name="default" extends="struts-default">
+		<action name="CustomerLoginAction" class="actions.CustomerLoginAction">
+			<result name="success">/jsp/customerSuccess.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="AdminLoginAction" class="actions.AdminLoginAction">
-            <result name="success">/jsp/adminSuccess.jsp</result>
+		</action>
+		<action name="AdminLoginAction" class="actions.AdminLoginAction">
+			<result name="success">/jsp/adminSuccess.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
-        </action>
-         <action name="CustomerRegister" class="actions.CustomerLoginAction" method="registerCustomer">
-            <result name="success">/jsp/customerRegisteredSuccess.jsp</result>
+		</action>
+		<action name="CustomerRegister" class="actions.CustomerLoginAction"
+			method="registerCustomer">
+			<result name="success">/jsp/customerRegisteredSuccess.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
-        </action>
-         <action name="AdminRegister" class="actions.AdminLoginAction" method="addAdmin">
-            <result name="success">/jsp/adminRegistered.jsp</result>
+		</action>
+		<action name="AdminRegister" class="actions.AdminLoginAction"
+			method="addAdmin">
+			<result name="success">/jsp/adminRegistered.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="AddBook" class="actions.BookAction" method="addBook">
-            <result name="success">/jsp/bookAdded.jsp</result>
+		</action>
+		<action name="AddBook" class="actions.BookAction" method="addBook">
+			<result name="success">/jsp/bookAdded.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="Logout" class="actions.AdminLoginAction" method="logout">
-        	<result name="success">/jsp/index.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="CustomerLogout" class="actions.CustomerLoginAction" method="logout">
-        	<result name="success">/jsp/index.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>	
-         <action name="Login" class="actions.CustomerLoginAction" method="forward">
-        	<result name="none">/jsp/index.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-          <action name="ViewAllBooks" class="actions.BookAction" method="displayAllBooks">
-        	<result name="success">/jsp/bookindex.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="ViewStock" class="actions.BookAction" method="displayAllBooks">
-        	<result name="success">/jsp/bookindex.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="SearchStock" class="actions.BookAction" method="forward">
-        	<result name="none">/jsp/searchstock.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="StockByCategory" class="actions.BookAction" method="displayBooksByCategory">
-        	<result name="success">/jsp/categoryresults.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="StockByAuthor" class="actions.BookAction" method="displayBooksByAuthor">
-        	<result name="success">/jsp/authorresults.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-        <action name="StockByTitle" class="actions.BookAction" method="displayBooksByTitle">
-        	<result name="success">/jsp/titleresults.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-         <action name="addToCart" class="actions.BookAction" method="displayBooksByTitle">
-        	<result name="success">/jsp/titleresults.jsp</result>
-        	<result name="failure">/jsp/failure.jsp</result>
-        </action>
-    </package>
+		</action>
+		<action name="Logout" class="actions.AdminLoginAction" method="logout">
+			<result name="success">/jsp/index.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="CustomerLogout" class="actions.CustomerLoginAction"
+			method="logout">
+			<result name="success">/jsp/index.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="Login" class="actions.CustomerLoginAction"
+			method="forward">
+			<result name="none">/jsp/index.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="ViewAllBooks" class="actions.BookAction" method="displayAllBooks">
+			<result name="success">/jsp/bookindex.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="ViewStock" class="actions.BookAction" method="displayAllBooks">
+			<result name="success">/jsp/bookindex.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="SearchStock" class="actions.BookAction" method="forward">
+			<result name="none">/jsp/searchstock.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="StockByCategory" class="actions.BookAction"
+			method="displayBooksByCategory">
+			<result name="success">/jsp/categoryresults.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="StockByAuthor" class="actions.BookAction" method="displayBooksByAuthor">
+			<result name="success">/jsp/authorresults.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="StockByTitle" class="actions.BookAction" method="displayBooksByTitle">
+			<result name="success">/jsp/titleresults.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="addToCart" class="actions.BookAction" method="displayBooksByTitle">
+			<result name="success">/jsp/titleresults.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="editUser" class="actions.CustomerLoginAction"
+			method="forward">
+			<result name="none">/jsp/editUser.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+	</package>
 </struts>
