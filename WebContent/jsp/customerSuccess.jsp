@@ -47,10 +47,13 @@
 								value="price" /></td>
 						<td style="background: #CCCCCC"><s:property value="category" /></td>
 						<td style="background: #CCCCCC"><s:property value="quantity" /></td>
-						<td style="background: #CCCCCC"><s:checkbox name="checkMe"
-								fieldValue="false" theme="simple" /> <a
-							href="<s:url action="addToCart"  />">Add To Cart</a><br /> <a
-							href="<s:url  />">Review</a></td>
+						<td style="background: #CCCCCC"><s:form action="addToCart">
+								<s:checkbox name="checkMe" theme="simple" />
+								<s:submit value="Add To Cart" theme="simple" />
+							</s:form><br /> <s:form action ="reviewBook">
+								<s:checkbox name="reviewMe" theme="simple" />
+								<s:submit value="Review" theme="simple" />
+							</s:form></td>
 
 
 
@@ -80,9 +83,13 @@
 						<td>&euro;<s:property value="price" /></td>
 						<td><s:property value="category" /></td>
 						<td><s:property value="quantity" /></td>
-						<td><s:checkbox name="checkMe" fieldValue="false"
-								theme="simple" /> <a href="<s:url action="addToCart"  />">Add
-								To Cart</a><br /> <a href="<s:url  />">Review</a></td>
+						<td><s:form action="addToCart">
+								<s:checkbox name="checkMe" theme="simple" />
+								<s:submit value="Add To Cart" theme="simple" />
+							</s:form><br /> <s:form action ="reviewBook">
+								<s:checkbox name="reviewMe" theme="simple" />
+								<s:submit value="Review" theme="simple" />
+							</s:form></td>
 
 					</s:else>
 				</tr>

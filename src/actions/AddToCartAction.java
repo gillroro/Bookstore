@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import entity.Book;
 import entity.Cart;
 import entity.LineItem;
+import entity.Order;
 
 public class AddToCartAction extends ActionSupport
 {
@@ -61,6 +61,21 @@ public class AddToCartAction extends ActionSupport
 
 	public void setItem(LineItem item) {
 		this.item = item;
+	}
+
+	public List<LineItem> getItems() {
+		return items;
+	}
+
+	public void setItems(List<LineItem> items) {
+		this.items = items;
+	}
+	
+	public String checkout(){
+//		Order order = new Order();
+//		order.setAmount(cart.getTotal());
+//		order.setCart(getCart());
+		return SUCCESS;
 	}
 	
 }

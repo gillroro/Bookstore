@@ -78,6 +78,13 @@
 			<result name="none">/jsp/editUser.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
-		
+		<action name="checkout" class="actions.AddToCartAction" method ="checkout" >
+			<result name="success">/jsp/payment.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="pay" class="actions.OrderAction" >
+			<result name="success">/jsp/confirmation.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
 	</package>
 </struts>

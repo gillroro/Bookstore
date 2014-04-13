@@ -5,17 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cart</title>
+<title>Checkout</title>
 </head>
 <body>
 
-Added To Cart
+Please select a payment method: 
 
-<s:form action = "checkout" >
+<br />
+<s:form action ="pay" >
+<s:select label="Select a month" 
+		headerKey="-1" headerValue="Select Payment Method"
+		list="#{'1':'Credit Card', '2':'Paypal'}" 
+		name="payment" 
+		 />
 
-<s:submit value = "Checkout" />
-
+<s:submit value = "Pay" />
 </s:form>
-
 </body>
 </html>
