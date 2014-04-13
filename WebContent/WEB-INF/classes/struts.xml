@@ -70,7 +70,11 @@
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
 		<action name="reviewBook" class="actions.ReviewBookAction" >
-			<result name="success">/jsp/review.jsp</result>
+			<result name="success">/jsp/reviewBook.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="submitReview" class="actions.ReviewBookAction" method="submit" >
+			<result name="success">/jsp/submitreview.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
 		<action name="editUser" class="actions.CustomerLoginAction"
