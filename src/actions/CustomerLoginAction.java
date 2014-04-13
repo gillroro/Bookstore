@@ -138,6 +138,18 @@ public class CustomerLoginAction extends ActionSupport {
 		connection.close();
 		return SUCCESS;
 	}
+	
+	public String updatedCustomer() throws SQLException{
+		connection = ConnectionFactory.getConnection();
+		addCustomer = connection.prepareStatement("UPDATE customer SET name = ? WHERE idcustomer(1, 100) ");
+		addCustomer.setString(1, getName());
+		
+		addCustomer.executeUpdate();
+		WebSession.put("CurrentUser", customer);
+		addCustomer.close();
+		connection.close();
+		return SUCCESS;
+	}
 
 	public String logout(){
 		WebSession.remove("CurrentUser");

@@ -17,6 +17,11 @@
 			<result name="success">/jsp/customerRegisteredSuccess.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
+		<action name="updateCustomer" class="actions.CustomerLoginAction"
+			method="updateCustomer">
+			<result name="success">/jsp/customerUpdated.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
 		<action name="AdminRegister" class="actions.AdminLoginAction"
 			method="addAdmin">
 			<result name="success">/jsp/adminRegistered.jsp</result>

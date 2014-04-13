@@ -47,13 +47,14 @@
 
 
 		<s:property value="name" />
-		<s:url id="editURL" action="editUser">
+		<s:url id="editURL" action="editUser" escapeAmp="false">
 
 			<s:bean name="entity.Customer"></s:bean>
 			<s:param name="name" value="#customerBean.name"></s:param>
-			<!--<s:param name="name" value="#customerBean.address"></s:param>
+			<s:param name="name" value="#customerBean.address"></s:param>
 			<s:param name="name" value="#customerBean.email"></s:param>
-			<s:param name="name" value="#customerBean.password"></s:param>-->
+			<s:param name="name" value="#customerBean.password"></s:param>
+			
 
 		</s:url>
 

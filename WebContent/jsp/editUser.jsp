@@ -10,14 +10,16 @@
 </head>
 <body>
 Edit Customer <br />
-Name: <s:property value="name" />
 
-<!--<s:form >
-	<s:textfield value="%{name}" />
-	<s:textfield value="%{address}" />
-	<s:textfield value="%{username}" />
-	<s:textfield value="%{password}" />
-</s:form>-->
+
+<s:form action="updateCustomer">
+	<s:textfield value="%{name}" label="Name:" />
+	<s:textfield value="%{address}" label="Address" />
+	<s:textfield value="%{email}" label="Email" />
+	<s:textfield value="%{password}" label="Password" />
+	
+	<s:submit value="Update" />
+</s:form>
 
 </body>
 </html>
