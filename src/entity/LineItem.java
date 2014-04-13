@@ -1,11 +1,23 @@
 package entity;
 
-public class LineItem {
+public abstract class LineItem {
 	
 	private String bookTitle;
 	private int quantity;
 	private double amount;
 	private Book book;
+	
+	public LineItem clone(){
+		LineItem clonedItem = null;
+		try{
+			clonedItem = (LineItem) super.clone();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return clonedItem;
+		
+	}
 	
 	public String getBookTitle() {
 		return bookTitle;
