@@ -65,8 +65,12 @@
 			<result name="success">/jsp/titleresults.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
-		<action name="addToCart" class="actions.BookAction" method="displayBooksByTitle">
-			<result name="success">/jsp/titleresults.jsp</result>
+		<action name="addToCart" class="actions.AddToCartAction" >
+			<result name="success">/jsp/cart.jsp</result>
+			<result name="failure">/jsp/failure.jsp</result>
+		</action>
+		<action name="reviewBook" class="actions.ReviewBookAction" >
+			<result name="success">/jsp/review.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
 		<action name="editUser" class="actions.CustomerLoginAction"
@@ -74,5 +78,6 @@
 			<result name="none">/jsp/editUser.jsp</result>
 			<result name="failure">/jsp/failure.jsp</result>
 		</action>
+		
 	</package>
 </struts>
